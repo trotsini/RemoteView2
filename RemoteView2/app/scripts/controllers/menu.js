@@ -87,11 +87,12 @@ RemoteView2.Controllers = RemoteView2.Controllers || {};
 
             // read the data from the store
             //this.contacts.fetch();
-        }
+        },
 
-        //addContact: function(){
+        addContact: function(){
         // add a new model instance based on the the new contact model to the collection
-        //this.contacts.create(this.newContact.attributes);
+            this.contacts.create(this.newContact.attributes);
+        }
 
     })
 })();
