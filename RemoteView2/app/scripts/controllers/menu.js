@@ -2,7 +2,7 @@
 
 RemoteView2.Controllers = RemoteView2.Controllers || {};
 
-(function () {
+(function() {
     'use strict';
 
     RemoteView2.Controllers.MenuController = M.Controller.extend({
@@ -18,7 +18,7 @@ RemoteView2.Controllers = RemoteView2.Controllers || {};
 
 
         // Called when the Application starts
-        applicationStart: function () {
+        applicationStart: function() {
             // Create a layout and apply it to the application
             var layout = M.SwitchLayout.extend().create(this);
 
@@ -32,7 +32,7 @@ RemoteView2.Controllers = RemoteView2.Controllers || {};
             this._applyViews();
         },
 
-        show: function () {
+        show: function() {
             // Initialze the Collection
             this.initData();
             // Initialize the Views
@@ -43,32 +43,32 @@ RemoteView2.Controllers = RemoteView2.Controllers || {};
             RemoteView2.getLayout().startTransition();
         },
 
-        //initViews: function () {
-        // Create the MenuView with the controller (this) as scope
-        //this.contentView = RemoteView2.Views.MenuView.create(this);
-        //},
+        initViews: function() {
+            //        Create the MenuView with the controller (this) as scope
+            this.contentView = RemoteView2.Views.MenuView.create(this);
+        },
 
-        //_applyViews: function () {
-        //RemoteView2.getLayout().applyViews({
-        //content: this.contentView
-        //})
+        _applyViews: function() {
+            RemoteView2.getLayout().applyViews({
+                content: this.contentView
+            })
 
-        //},
-        // Navigation: on button tap
-        //gotoDetailView: function () {
-        // navigate to the detail view via a route
-        //RemoteView2.navigate({
-        //route: '/detail',
-        //transition: M.PageTransitions.CONST.FALL
-        //});
-        //},
+        },
+        //Navigation: on button tap
+        gotoDetailView: function() {
+            //navigate to the detail view via a route
+            RemoteView2.navigate({
+                route: '/detail',
+                transition: M.PageTransitions.CONST.FALL
+            });
+        },
 
         // initialze the data
-        initData: function () {
+        initData: function() {
             //create a model to store the first and the last name
             this.newContact = RemoteView2.Models.ContactModel.create();
             // create the contacts collections if it doesn't exist
-            if (!this.contacts) {
+            if( !this.contacts ) {
                 // create the collection with demo data
                 this.contacts = RemoteView2.Collections.ContactsCollection.create(this.getContacts());
 
@@ -78,7 +78,7 @@ RemoteView2.Controllers = RemoteView2.Controllers || {};
         },
 
         // get the contacts
-        getContacts: function () {
+        getContacts: function() {
             // create some demo data
             return [
                 {"name": 'foo', "lastname": "bar"},
