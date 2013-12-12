@@ -7,7 +7,7 @@ RemoteView2.Views = RemoteView2.Views || {};
 (function () {
     'use strict';
 
-    RemoteView2.Views.DetailViews = M.View.extend({
+    RemoteView2.Views.DetailView = M.View.extend({
         // The properties of a view
 
         // The view should be in a grid
